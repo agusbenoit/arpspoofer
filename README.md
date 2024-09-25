@@ -29,6 +29,23 @@
    pip install -r requirements.txt
    ```
 
+## Important Note: Promiscuous Mode
+
+For ARPSpoofer to work effectively, your network interface card (NIC) needs to be in promiscuous mode. This allows your machine to capture all traffic on the network, not just the packets addressed to it.
+
+### How to Enable Promiscuous Mode
+
+#### Linux
+You can enable promiscuous mode using the following command:
+```bash
+sudo ifconfig <interface> promisc
+```
+Replace `<interface>` with your actual network interface name (e.g., `eth0`, `wlan0`)
+
+### VirtualBox Users
+
+If you are running ARPSpoofer on a virtual machine, make sure to set the network adapter to **Bridged Adapter** mode and enable **Promiscuous Mode: Allow All** in the network settings of your virtual machine.
+
 ## Usage
 
 ### Reconnaissance Mode
