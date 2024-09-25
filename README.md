@@ -16,4 +16,46 @@
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ARPSpoofer.git
+   git clone https://github.com/agusbenoit/ARPSpoofer.git
+    ```
+
+2. Navigate to the ARPSpoofer directory:
+   ```bash
+   cd ARPSpoofer
+   ```
+
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+### Reconnaissance Mode
+
+Run ARPSpoofer in reconnaissance mode to capture ARP requests on your network and discover IP and MAC addresses of devices:
+   ```bash
+   sudo python3 arpspoof.py -r
+   ```
+
+### Attack Mode
+
+Run ARPSpoofer in attack mode to perform ARP spoofing between a target device and the network gateway:
+   ```bash
+   sudo python3 arpspoof.py -a <victim_ip> <victim_mac> <gateway_ip>  <gateway_mac>
+
+   ```
+**Example:**
+   ```bash
+   sudo python3 arpspoof.py -a 192.168.1.5 aa:bb:cc:dd:ee:ff 192.168.1.1 11:22:33:44:55:66
+   ```
+
+### Options
+- `-r`, `--reconisance`: Start in reconnaissance mode.
+- `-a`, `--attack`: Start in attack mode and requires 4 parameters: `<victim_ip> <victim_mac> <gateway_ip> <gateway_mac>`.
+
+## Disclaimer
+> **Warning:** This tool is intended for educational purposes only. Use it only on networks that you own or have explicit permission to test. Unauthorized use on networks that you do not own is illegal and can have serious consequences. The author is not responsible for any misuse of this tool.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
